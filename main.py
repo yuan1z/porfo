@@ -45,13 +45,10 @@ def send_email(data):
 @app.route('/submit_form', methods=['POST', 'GET'])
 def submit_form():
     if request.method == 'POST':
-        try:
-            data = request.form.to_dict()
-            print(data)
-            send_email(data)
-            write_to_csv(data)
-        except:
-            return 'did not save into database'
+        data = request.form.to_dict()
+        print(data)
+        send_email(data)
+        write_to_csv(data)
         return redirect('/thankyou.html')
     else:
         return "something is wrong here"
