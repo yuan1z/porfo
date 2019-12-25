@@ -47,7 +47,7 @@ def submit_form():
     if request.method == 'POST':
         data = request.form.to_dict()
         print(data)
-        send_email(data)
+        #send_email(data)
         write_to_csv(data)
         return redirect('/thankyou.html')
     else:
